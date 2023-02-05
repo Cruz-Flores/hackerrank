@@ -17,3 +17,5 @@ function kangarooCGPT(x1: number, v1: number, x2: number, v2: number): string {
 function kangarooCGPT1(x1: number, v1: number, x2: number, v2: number): string {
   return v1 > v2 && (x2 - x1) % (v1 - v2) === 0 ? 'YES' : 'NO';
 }
+
+// revisar si se puede resolver con rectas secantes
