@@ -40,12 +40,15 @@ function getTotalXRefactor(a: number[], b: number[]): number {
   const lastNumber = Math.max(...a);
   const firstNumber = Math.min(...b);
 
-  return Array.from(
-    { length: firstNumber - lastNumber + 1 },
-    (_, i) => lastNumber + i
-  )
-    .filter((n) => a.every((factor) => n % factor === 0))
-    .filter((n) => b.every((num) => num % n === 0)).length;
+  return (
+    Array.from(
+      { length: firstNumber - lastNumber + 1 },
+      (_, i) => lastNumber + i
+    )
+      .filter((n) => a.every((factor) => n % factor === 0))
+      //.filter((n) => a.every((factor) => n % factor === 0 && b.every((num) => num % n === 0))).length
+      .filter((n) => b.every((num) => num % n === 0)).length
+  );
 }
 
 //salida
